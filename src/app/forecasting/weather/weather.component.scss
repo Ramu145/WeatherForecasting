@@ -1,0 +1,52 @@
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.search_icon {
+    font-size: 1.25rem;
+}
+
+.weather_report {
+    height: 600px;
+}
+
+:host ::ng-deep {
+    .accordion_heading {
+        color: #333;
+        font-weight: bold;
+    }
+
+    .form-control {
+        display: inline-block !important;
+        width: 80%;
+    }
+
+    .submit_btn {
+        display: inline-block !important;
+        width: 50px;
+        position: relative;
+        left: -10px;
+        top: -3px;
+    }
+
+    .search_form {
+        margin-bottom: 1rem;
+    }
+
+    .col-md-4 .container {
+        max-height: 600px;
+        overflow-y: scroll;
+    }
+}
