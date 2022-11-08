@@ -20,22 +20,29 @@
   <div class="container-fluid">
   <div class="row weather_report" *ngIf="selectedCityVal && validateLatlng">
     <div class="col-md-4">
-      <h3>Weather Details upto next 5 days</h3>
+      <h4 class="heading_forecast">Forcasting for next 5 Days</h4>
       <div class="container">
           <div id='accordion' *ngFor="let weather of weatherDetails.list;" >
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <button class="btn btn-link accordion_heading" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <button class="btn btn-link accordion_heading" data-toggle="collapse" attr.data-target="{{'#'+weather.id}}" aria-expanded="true" aria-controls="collapseOne">
                       {{weather.dt_txt}}
                       <span>{{weather.dayName}}</span>
                   </button>
                 </h5>
+                <img class="weather_icon" [src]="weather.icon" alt="">
               </div>
           
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent=#accordion>
+              <div attr.id="{{weather.id}}" class="collapse show" aria-labelledby="headingOne" data-parent=#accordion>
                 <div class="card-body">
-                  details of the weather
+                  <label>Weather Forcast : </label> <span>  {{weather.weather[0].description}}</span><br/>
+                  <label>Wind Speed : </label> <span>  {{weather.wind.speed}}</span><br/>
+                  <label>Temperature  : </label> <span> Min ( <span>  {{weather.main.temp_min}}C )</span>  Max ( <span>  {{weather.main.temp_max}}C )</span> </span><br/>
+                  <label>Humidity : </label> <span>  {{weather.main.humidity}}</span><br/>
+
+
+                 
                 </div>
               </div>
             </div>
